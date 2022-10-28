@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9648FB36-6631-42E3-ACDC-714890A775F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MartialArtist</RootNamespace>
+    <AssemblyName>MartialArtist</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BehaviourClasses\AttackCancelBySkillBehaviour.cs" />
+    <Compile Include="BehaviourClasses\BastardBehaviour.cs" />
+    <Compile Include="BehaviourClasses\AttackCancelByBlockBehaviour.cs" />
+    <Compile Include="BehaviourClasses\FinesseBehaviour.cs" />
+    <Compile Include="BehaviourClasses\ParryBehaviour.cs" />
+    <Compile Include="MartialArtist.cs" />
+    <Compile Include="QuestTrackers\KenseiOutsideTracker.cs" />
+    <Compile Include="Skills\BastardSkill.cs" />
+    <Compile Include="Skills\FinesseSkill.cs" />
+    <Compile Include="Skills\BlockSkill.cs" />
+    <Compile Include="Skills\ParrySkill.cs" />
+    <Compile Include="SkillTreesAndTrainers\KenseiNPC\KenseiNPC.cs" />
+    <Compile Include="SkillTreesAndTrainers\MartialArtistSkillTree.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomWeaponBehaviour\CustomWeaponBehaviour.csproj">
+      <Project>{d736b5b6-7652-4eee-8e3d-175c0461a4b2}</Project>
+      <Name>CustomWeaponBehaviour</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InstanceIDs\InstanceIDs.csproj">
+      <Project>{407d22a2-71a9-4906-a3d0-0a2211718463}</Project>
+      <Name>InstanceIDs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Outward-SideLoader\src\SideLoader.csproj">
+      <Project>{69b2c7b7-d715-4002-b009-f84ada52f8cc}</Project>
+      <Name>SideLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SynchronizedWorldObjects\SynchronizedWorldObjects.csproj">
+      <Project>{bada105e-b03e-49e0-a87e-95af55944022}</Project>
+      <Name>SynchronizedWorldObjects</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\TinyHelper\TinyHelper.csproj">
+      <Project>{5bff01dc-4eae-4eba-9b1e-fdf0cfe577f2}</Project>
+      <Name>TinyHelper</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Outward\Outward_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Outward\Outward_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\BepInEx\public\BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Outward\Outward_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Outward\Outward_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Outward\Outward_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
