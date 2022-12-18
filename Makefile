@@ -9,9 +9,9 @@ assemble:
 	# common for all mods
 	rm -f -r public
 	mkdir -p public/$(pluginpath)/$(modname)
-	cp bin/$(modname).dll public/$(pluginpath)/$(modname)/
+	cp -u bin/$(modname).dll public/$(pluginpath)/$(modname)/
 	for dependency in $(dependencies) ; do \
-		cp ../$${dependency}/bin/$${dependency}.dll public/$(pluginpath)/$(modname)/ ; \
+		cp -u ../$${dependency}/bin/$${dependency}.dll public/$(pluginpath)/$(modname)/ ; \
 	done
 	
 	# crusader specific
@@ -20,17 +20,17 @@ assemble:
 	mkdir -p public/$(sideloaderpath)/AssetBundles
 	
 	mkdir -p public/$(sideloaderpath)/Items/Bastard/Textures
-	cp resources/icons/bastard.png                          public/$(sideloaderpath)/Items/Bastard/Textures/icon.png
-	cp resources/icons/bastard_small.png                    public/$(sideloaderpath)/Items/Bastard/Textures/skillicon.png
+	cp -u resources/icons/bastard.png                          public/$(sideloaderpath)/Items/Bastard/Textures/icon.png
+	cp -u resources/icons/bastard_small.png                    public/$(sideloaderpath)/Items/Bastard/Textures/skillicon.png
 	mkdir -p public/$(sideloaderpath)/Items/Block/Textures
-	cp resources/icons/block.png                            public/$(sideloaderpath)/Items/Block/Textures/icon.png
-	cp resources/icons/block_small.png                      public/$(sideloaderpath)/Items/Block/Textures/skillicon.png
+	cp -u resources/icons/block.png                            public/$(sideloaderpath)/Items/Block/Textures/icon.png
+	cp -u resources/icons/block_small.png                      public/$(sideloaderpath)/Items/Block/Textures/skillicon.png
 	mkdir -p public/$(sideloaderpath)/Items/Finesse/Textures
-	cp resources/icons/finesse.png                          public/$(sideloaderpath)/Items/Finesse/Textures/icon.png
-	cp resources/icons/finesse_small.png                    public/$(sideloaderpath)/Items/Finesse/Textures/skillicon.png
+	cp -u resources/icons/finesse.png                          public/$(sideloaderpath)/Items/Finesse/Textures/icon.png
+	cp -u resources/icons/finesse_small.png                    public/$(sideloaderpath)/Items/Finesse/Textures/skillicon.png
 	mkdir -p public/$(sideloaderpath)/Items/Parry/Textures
-	cp resources/icons/parry.png                            public/$(sideloaderpath)/Items/Parry/Textures/icon.png
-	cp resources/icons/parry_small.png                      public/$(sideloaderpath)/Items/Parry/Textures/skillicon.png
+	cp -u resources/icons/parry.png                            public/$(sideloaderpath)/Items/Parry/Textures/icon.png
+	cp -u resources/icons/parry_small.png                      public/$(sideloaderpath)/Items/Parry/Textures/skillicon.png
 	
 publish:
 	make assemble
@@ -40,7 +40,7 @@ publish:
 install:
 	make assemble
 	rm -r -f $(gamepath)/$(pluginpath)/$(modname)
-	cp -r public/* $(gamepath)
+	cp -u -r public/* $(gamepath)
 clean:
 	rm -f -r public
 	rm -f $(modname).rar
