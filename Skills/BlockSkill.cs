@@ -22,7 +22,7 @@ namespace MartialArtist
                 New_ItemID = IDs.blockSkillID,
                 SLPackName = "MartialArtist",
                 SubfolderName = "Footwork",
-                Description = "You can block and use skills sooner after attacking.",
+                Description = "You can block with swords and use skills sooner after attacking.",
                 IsUsable = false,
                 CastType = Character.SpellCastType.NONE,
                 CastModifier = Character.SpellCastModifier.Immobilized,
