@@ -8,6 +8,7 @@
     using TinyHelper;
 
     [BepInPlugin(GUID, NAME, VERSION)]
+    [BepInDependency(SL.GUID, BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(SynchronizedWorldObjects.SynchronizedWorldObjects.GUID, SynchronizedWorldObjects.SynchronizedWorldObjects.VERSION)]
 
     public class MartialArtist : BaseUnityPlugin
