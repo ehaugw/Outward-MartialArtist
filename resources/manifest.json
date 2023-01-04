@@ -1,0 +1,10 @@
+{
+  "name": "MartialArtist",
+  "version_number": "2.0.0",
+  "website_url": "https://github.com/ehaugw/Outward-MartialArtist",
+  "description": "Provide some simple mechanics, locked behind basic skills, to add some depth to combat",
+  "dependencies": [
+    "sinai-dev-SideLoader-3.8.3",
+    "BepInEx-BepInExPack_Outward-5.4.8"
+  ]
+}

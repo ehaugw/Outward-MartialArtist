@@ -14,7 +14,7 @@ assemble:
 		cp -u ../$${dependency}/bin/$${dependency}.dll public/$(pluginpath)/$(modname)/ ; \
 	done
 	
-	# crusader specific
+	# mod specific
 	mkdir -p public/$(sideloaderpath)/Items
 	mkdir -p public/$(sideloaderpath)/Texture2D
 	mkdir -p public/$(sideloaderpath)/AssetBundles
@@ -33,9 +33,17 @@ assemble:
 	cp -u resources/icons/parry_small.png                      public/$(sideloaderpath)/Items/Parry/Textures/skillicon.png
 	
 publish:
+	make clean
 	make assemble
 	rm -f $(modname).rar
 	rar a $(modname).rar -ep1 public/*
+	
+	(cd ../Descriptions && python3 $(modname).py)
+	
+	cp -u resources/manifest.json public/BepInEx/
+	cp -u README.md public/BepInEx/
+	cp -u resources/icon.png public/BepInEx/
+	(cd public/BepInEx && zip -r $(modname)_thunderstore.zip * && mv $(modname)_thunderstore.zip ../../)
 
 install:
 	make assemble
@@ -44,6 +52,6 @@ install:
 clean:
 	rm -f -r public
 	rm -f $(modname).rar
-	rm -f -r bin
+	rm -f $(modname)_thunderstore.zip
 info:
 	echo Modname: $(modname)
