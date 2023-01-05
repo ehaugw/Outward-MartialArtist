@@ -59,6 +59,9 @@ Manual Uninstallation
 # Patch notes
 
 
+* Version 2.0.2
+
+  * Use dynamic root folder rather than hard coded.
 * Version 2.0.1
 
   * Updated to work with thunderstore.

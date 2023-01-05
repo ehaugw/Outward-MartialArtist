@@ -20,7 +20,7 @@ namespace MartialArtist
                 EffectBehaviour = EditBehaviours.Destroy,
                 Target_ItemID = IDs.arbitraryPassiveSkillID,
                 New_ItemID = IDs.finesseSkillID,
-                SLPackName = "MartialArtist",
+                SLPackName = MartialArtist.ModFolderName,
                 SubfolderName = "Finesse",
                 Description = "Enables you to outpace your opponents with agile weapons.",
                 IsUsable = false,

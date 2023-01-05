@@ -20,7 +20,7 @@ namespace MartialArtist
                 EffectBehaviour = EditBehaviours.Destroy,
                 Target_ItemID = IDs.arbitraryPassiveSkillID,
                 New_ItemID = IDs.blockSkillID,
-                SLPackName = "MartialArtist",
+                SLPackName = MartialArtist.ModFolderName,
                 SubfolderName = "Footwork",
                 Description = "You can block with swords and use skills sooner after attacking.",
                 IsUsable = false,

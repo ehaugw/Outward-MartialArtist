@@ -20,7 +20,7 @@ namespace MartialArtist
                 EffectBehaviour = EditBehaviours.Destroy,
                 Target_ItemID = IDs.arbitraryPassiveSkillID,
                 New_ItemID = IDs.bastardSkillID,
-                SLPackName = "MartialArtist",
+                SLPackName = MartialArtist.ModFolderName,
                 SubfolderName = "Bastard",
                 Description = "Enables you to swing some one handed weapons in two hands.",
                 IsUsable = false,

@@ -6,6 +6,7 @@
     using BepInEx;
     using InstanceIDs;
     using TinyHelper;
+    using System.IO;
 
     [BepInPlugin(GUID, NAME, VERSION)]
     [BepInDependency(SL.GUID, BepInDependency.DependencyFlags.HardDependency)]
@@ -14,8 +15,9 @@
     public class MartialArtist : BaseUnityPlugin
     {
         public const string GUID = "com.ehaugw.martialartist";
-        public const string VERSION = "2.0.1";
+        public const string VERSION = "2.0.2";
         public const string NAME = "Martial Artist";
+        public static string ModFolderName = Directory.GetParent(typeof(MartialArtist).Assembly.Location).Name.ToString();
 
         public Skill BastardSkillInstance;
         public Skill FinesseSkillInstance;

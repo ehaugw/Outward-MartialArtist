@@ -20,7 +20,7 @@ namespace MartialArtist
                 EffectBehaviour = EditBehaviours.Destroy,
                 Target_ItemID = IDs.arbitraryPassiveSkillID,
                 New_ItemID = IDs.parrySkillID,
-                SLPackName = "MartialArtist",
+                SLPackName = MartialArtist.ModFolderName,
                 SubfolderName = "Parry",
                 Description = "With proper equipment, you can cause opponents to stagger when you parry them.",
                 IsUsable = false,
