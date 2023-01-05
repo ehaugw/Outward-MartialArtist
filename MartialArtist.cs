@@ -14,7 +14,7 @@
     public class MartialArtist : BaseUnityPlugin
     {
         public const string GUID = "com.ehaugw.martialartist";
-        public const string VERSION = "2.0.0";
+        public const string VERSION = "2.0.1";
         public const string NAME = "Martial Artist";
 
         public Skill BastardSkillInstance;
