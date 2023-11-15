@@ -33,8 +33,27 @@ namespace MartialArtist
                     } },
 
                     new SL_SkillRow() { RowIndex = 2, Slots = new List<SL_BaseSkillSlot>() {
-                            new SL_SkillSlot() { ColumnIndex = 1, SilverCost = 50, SkillID = IDs.finesseSkillID,    Breakthrough = false,   RequiredSkillSlot = Vector2.zero, },
-                            new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 50, SkillID = IDs.bastardSkillID,    Breakthrough = false,   RequiredSkillSlot = Vector2.zero  },
+                        new SL_SkillSlotFork()
+                            {
+                                ColumnIndex = 2,
+                                RequiredSkillSlot = new Vector2(3,2),
+                                Choice1 = new SL_SkillSlot()
+                                {
+                                    ColumnIndex = 2,
+                                    SilverCost = 100,
+                                    SkillID = IDs.finesseSkillID,
+                                    RequiredSkillSlot = Vector2.zero,
+                                    Breakthrough = false
+                                },
+                                Choice2 = new SL_SkillSlot()
+                                {
+                                    ColumnIndex = 2,
+                                    SilverCost = 100,
+                                    SkillID = IDs.bastardSkillID,
+                                    RequiredSkillSlot = Vector2.zero,
+                                    Breakthrough = false
+                                }
+                            },
                     } },
 
                     new SL_SkillRow() { RowIndex = 3, Slots = new List<SL_BaseSkillSlot>() {
@@ -45,6 +64,8 @@ namespace MartialArtist
 
                     new SL_SkillRow() { RowIndex = 5, Slots = new List<SL_BaseSkillSlot>() {
                     } },
+
+
                 }
             };
         }
