@@ -49,6 +49,7 @@
     <Compile Include="Skills\BastardSkill.cs" />
     <Compile Include="Skills\FinesseSkill.cs" />
     <Compile Include="Skills\BlockSkill.cs" />
+    <Compile Include="Skills\PrecisionStrikeSkill.cs" />
     <Compile Include="Skills\ParrySkill.cs" />
     <Compile Include="SkillTreesAndTrainers\KenseiNPC\KenseiNPC.cs" />
     <Compile Include="SkillTreesAndTrainers\MartialArtistSkillTree.cs" />
@@ -78,6 +79,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\BepInEx\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Outward\Outward_Defed\Outward Definitive Edition_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
@@ -90,6 +94,9 @@
     <Reference Include="BepInEx, Version=5.4.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\BepInEx\BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Harmony">
+      <HintPath>..\BepInEx\BepInEx\core\BepInEx.Harmony.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Outward\Outward_Defed\Outward Definitive Edition_Data\Managed\UnityEngine.dll</HintPath>

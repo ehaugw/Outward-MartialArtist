@@ -7,6 +7,7 @@
     using InstanceIDs;
     using TinyHelper;
     using System.IO;
+    using HarmonyLib;
 
     [BepInPlugin(GUID, NAME, VERSION)]
     [BepInDependency(SL.GUID, BepInDependency.DependencyFlags.HardDependency)]
@@ -23,6 +24,7 @@
         public Skill FinesseSkillInstance;
         public Skill ParrySkillInstance;
         public Skill BlockSkillInstance;
+        public Skill PrecisionStrikeSkillInstance;
 
         //public Item kenseiOutsideTrackerInstance;
 
@@ -45,6 +47,8 @@
             SL.OnPacksLoaded += OnPackLoaded;
             SL.OnSceneLoaded += OnSceneLoaded;
 
+            var harmony = new Harmony(GUID);
+            harmony.PatchAll();
         }
 
         private void OnSceneLoaded()
@@ -57,6 +61,7 @@
             BastardSkillInstance = BastardSkill.Init();
             FinesseSkillInstance = FinesseSkill.Init();
             BlockSkillInstance = BlockSkill.Init();
+            PrecisionStrikeSkillInstance = PrecisionStrikeSkill.Init();
 
             //kenseiOutsideTrackerInstance = KenseiOutsideTracker.Init();
 
