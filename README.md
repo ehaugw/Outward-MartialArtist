@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at January 05, 2023. Due to significant changes in a few mod frameworks' infrastructures, it is recommended that you update all mods that are older than November 08, 2022.
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at November 15, 2023. Due to significant changes in a few mod frameworks' infrastructures, it is recommended that you update all mods that are older than November 08, 2022.
 
 
 
@@ -47,7 +47,7 @@ Manual Uninstallation
 
 **Block** (Passive)
 
-* You can block with swords and use skills sooner after attacking.
+* You can block with swords and spears, and use skills sooner after attacking.
 
 **Parry** (Passive)
 
@@ -59,6 +59,11 @@ Manual Uninstallation
 # Patch notes
 
 
+* Version 2.0.3
+
+  * Fix **Parry** description.
+  * Change **Parry** impact mechanics
+  * Make [Finesse](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Finesse") and [Bastard](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Bastard") mutually exclusive.
 * Version 2.0.2
 
   * Use dynamic root folder rather than hard coded.
