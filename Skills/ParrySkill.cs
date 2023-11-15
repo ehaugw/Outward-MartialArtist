@@ -22,7 +22,7 @@ namespace MartialArtist
                 New_ItemID = IDs.parrySkillID,
                 SLPackName = MartialArtist.ModFolderName,
                 SubfolderName = "Parry",
-                Description = "With proper equipment, you can cause opponents to stagger when you parry them.",
+                Description = "You can cause opponents to stagger when you parry them.",
                 IsUsable = false,
                 CastType = Character.SpellCastType.NONE,
                 CastModifier = Character.SpellCastModifier.Immobilized,
