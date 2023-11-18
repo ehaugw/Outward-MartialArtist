@@ -17,7 +17,7 @@ namespace MartialArtist
                 name: "Honed Blade",
                 description: "Weapon deals some Physical damage.",
                 //iconFileName: Crusader.ModFolderName + @"\SideLoader\Texture2D\impendingDoomImbueIcon.png",
-                visualEffectID: IDs.iceVarnishImbueID
+                visualEffectID: IDs.windImbueID
             );
 
             Transform effectTransform;
@@ -25,16 +25,6 @@ namespace MartialArtist
             effectTransform = TinyGameObjectManager.MakeFreshObject("Effects", true, true, effectPreset.transform).transform;
             TinyEffectManager.MakeWeaponDamage(effectTransform, 0, 0.20f, DamageType.Types.Physical, 0f);
 
-            //var fx = effectPreset.ImbueFX;
-
-            //fx = Object.Instantiate(fx);
-            //fx.gameObject.SetActive(false);
-            //Object.DontDestroyOnLoad(fx);
-            //effectPreset.ImbueFX = fx;
-
-            //GameObject.Destroy(fx.Find("Bolt Point light").gameObject);
-            //GameObject.Destroy(fx.Find("BoltParticlesLargeSharpHitDISABLEDTEMP").gameObject);
-            //GameObject.Destroy(fx.Find("BoltParticlesLargeSharp (1)").gameObject);
             var fx = effectPreset.ImbueFX;
 
             fx = Object.Instantiate(fx);
@@ -42,9 +32,7 @@ namespace MartialArtist
             Object.DontDestroyOnLoad(fx);
             effectPreset.ImbueFX = fx;
 
-            GameObject.Destroy(fx.Find("IceParticlesCore").gameObject);
-            GameObject.Destroy(fx.Find("IceParticlesCoreModeled").gameObject);
-            GameObject.Destroy(fx.Find("Smoke").gameObject);
+            GameObject.Destroy(fx.Find("BlessParticlesSparkles").gameObject);
 
             return effectPreset;
         }
