@@ -44,13 +44,17 @@
     <Compile Include="BehaviourClasses\AttackCancelByBlockBehaviour.cs" />
     <Compile Include="BehaviourClasses\FinesseBehaviour.cs" />
     <Compile Include="BehaviourClasses\ParryBehaviour.cs" />
+    <Compile Include="EffectInitializer.cs" />
     <Compile Include="MartialArtist.cs" />
     <Compile Include="QuestTrackers\KenseiOutsideTracker.cs" />
     <Compile Include="Skills\BastardSkill.cs" />
+    <Compile Include="Skills\CarefulMaintenanceSkill.cs" />
     <Compile Include="Skills\FinesseSkill.cs" />
     <Compile Include="Skills\BlockSkill.cs" />
+    <Compile Include="Skills\ApplyHonedBlade.cs" />
     <Compile Include="Skills\PrecisionStrikeSkill.cs" />
     <Compile Include="Skills\ParrySkill.cs" />
+    <Compile Include="Skills\ThrowSand.cs" />
     <Compile Include="SkillTreesAndTrainers\KenseiNPC\KenseiNPC.cs" />
     <Compile Include="SkillTreesAndTrainers\MartialArtistSkillTree.cs" />
   </ItemGroup>

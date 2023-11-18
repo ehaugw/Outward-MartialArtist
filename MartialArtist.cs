@@ -20,14 +20,6 @@
         public const string NAME = "Martial Artist";
         public static string ModFolderName = Directory.GetParent(typeof(MartialArtist).Assembly.Location).Name.ToString();
 
-        public Skill BastardSkillInstance;
-        public Skill FinesseSkillInstance;
-        public Skill ParrySkillInstance;
-        public Skill BlockSkillInstance;
-        public Skill PrecisionStrikeSkillInstance;
-
-        //public Item kenseiOutsideTrackerInstance;
-
         public SkillSchool martialArtistTreeInstance;
 
         public static MartialArtist Instance;
@@ -36,7 +28,6 @@
             Instance = this;
 
             KenseiNPC.Init();
-            //KenseiNPC_OutsideCell.Init();
 
             CustomWeaponBehaviour.CustomWeaponBehaviour.Instance.parryBehaviour = new ParryBehaviourSkillRequired();
             CustomWeaponBehaviour.CustomWeaponBehaviour.Instance.bastardBehaviour = new BastardBehaviour();
@@ -57,13 +48,18 @@
 
         private void OnPackLoaded()
         {
-            ParrySkillInstance = ParrySkill.Init();
-            BastardSkillInstance = BastardSkill.Init();
-            FinesseSkillInstance = FinesseSkill.Init();
-            BlockSkillInstance = BlockSkill.Init();
-            PrecisionStrikeSkillInstance = PrecisionStrikeSkill.Init();
+            EffectInitializer.MakeHonedBladeInfusion();
+            
+            ParrySkill.Init();
+            BastardSkill.Init();
+            FinesseSkill.Init();
+            BlockSkill.Init();
+            PrecisionStrikeSkill.Init();
+            ApplyHonedBlade.Init();
+            CarefulMaintenanceSkill.Init();
+            ThrowSandSKill.Init();
 
-            //kenseiOutsideTrackerInstance = KenseiOutsideTracker.Init();
+            //KenseiOutsideTracker.Init();
 
 
             //kenseiOutsideTrackerInstance = TinyItemManager.MakeSkill(newID: IDs.kenseiOutsideTrackerID, targetID: IDs.arbitraryPassiveSkillID, identifierName: "kenseiOutsideTracker", description: "Kensei will wait for you outside of the bandit prison.", ignoreLearnNotification: false);

@@ -37,7 +37,7 @@ namespace MartialArtist
         public static bool ShouldSpawnOutside()
         {
             //return false;
-            return CharacterManager.Instance.GetWorldHostCharacter().Inventory.SkillKnowledge.IsItemLearned(IDs.kenseiOutsideTrackerID);
+            return CharacterManager.Instance.GetWorldHostCharacter().Inventory.SkillKnowledge.IsItemLearned(IDs.carefulMaintenanceID);
         }
 
         public KenseiNPC(string identifierName, int rpcListenerID, int[] defaultEquipment = null, int[] moddedEquipment = null, Vector3? scale = null, Character.Factions? faction = null) :

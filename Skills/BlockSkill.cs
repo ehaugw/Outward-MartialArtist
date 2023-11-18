@@ -11,7 +11,7 @@ namespace MartialArtist
 {
     public class BlockSkill
     {
-        public const string NAME = "Block";
+        public const string NAME = "Fencing";
         public static Skill Init()
         {
             var myitem = new SL_Skill()

@@ -37,14 +37,15 @@ namespace MartialArtist
         }
     }
     [HarmonyPatch(typeof(Character), nameof(Character.ReceiveHit), new Type[] { typeof(UnityEngine.Object), typeof(DamageList), typeof(Vector3), typeof(Vector3), typeof(float), typeof(float), typeof(Character), typeof(float), typeof(bool) })]
-    //[HarmonyPatch(typeof(Character), nameof(Character.ReceiveHit), new Type[] { typeof(UnityEngine.Object), typeof(DamageList), typeof(Vector3), typeof(Vector3), typeof(float), typeof(float), typeof(Character), typeof(float) })]
     public class Character_ReceiveHit
     {
         [HarmonyPrefix]
         public static void HarmonyPrefix(Character __instance, UnityEngine.Object _damageSource, DamageList _damage, Vector3 _hitDir, float _angle)
         {
+            var eligibleTypes = new Weapon.WeaponType[] { Weapon.WeaponType.Axe_1H, Weapon.WeaponType.Axe_2H, Weapon.WeaponType.Spear_2H, Weapon.WeaponType.Sword_1H, Weapon.WeaponType.Sword_2H };
+
             var hitFromBack = Vector3.Dot(__instance.transform.forward, -_hitDir) < 0f && _angle >= 120f;
-            if (_damageSource is Weapon _weapon && SkillRequirements.SafeHasSkillKnowledge(_weapon?.OwnerCharacter, IDs.precisionStrikeID) && (hitFromBack || __instance.CharHurtType == Character.HurtType.Knockdown))
+            if (_damageSource is Weapon _weapon && eligibleTypes.Contains(_weapon.Type) && SkillRequirements.SafeHasSkillKnowledge(_weapon?.OwnerCharacter, IDs.precisionStrikeID) && (hitFromBack || __instance.CharHurtType == Character.HurtType.Knockdown))
             {
                 var attackType = ((int)SideLoader.At.GetField<Character>(_weapon.OwnerCharacter, "m_attackID"));
                 if (attackType == 0 || attackType == 1)
