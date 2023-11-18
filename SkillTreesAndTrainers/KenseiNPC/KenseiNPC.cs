@@ -14,7 +14,7 @@ namespace MartialArtist
             var syncedNPC = new KenseiNPC(
                 identifierName:     "Kensei",
                 rpcListenerID:      IDs.NPCID_Kensei,
-                defaultEquipment:   new int[] { IDs.tatteredHood1, IDs.shadowKaziteLightArmorID, IDs.shadowKaziteLightBootsID, IDs.kaziteBladeID }
+                defaultEquipment:   new int[] { IDs.tatteredHood1, IDs.tatteredAttireID, IDs.shadowKaziteLightBootsID, IDs.kaziteBladeID }
             );
 
             syncedNPC.AddToScene(new SynchronizedNPCScene(
@@ -26,9 +26,9 @@ namespace MartialArtist
             ));
 
             syncedNPC.AddToScene(new SynchronizedNPCScene(
-                scene: "ChersoneseNewTerrain",
-                position: new Vector3(1304.0f, 20.7f, 660.0f),
-                rotation: new Vector3(0, 251.7f, 0),
+                scene: "Emercar",
+                position: new Vector3(1075.278f, -28.6992f, 1191.85f),
+                rotation: new Vector3(0, 175f, 0),
                 rpcMeta: "outside",
                 shouldSpawnInScene: delegate () { return ShouldSpawnOutside(); }
             ));
