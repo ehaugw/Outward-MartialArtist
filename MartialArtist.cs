@@ -59,12 +59,8 @@
             CarefulMaintenanceSkill.Init();
             ThrowSandSKill.Init();
 
-            //KenseiOutsideTracker.Init();
-
-
-            //kenseiOutsideTrackerInstance = TinyItemManager.MakeSkill(newID: IDs.kenseiOutsideTrackerID, targetID: IDs.arbitraryPassiveSkillID, identifierName: "kenseiOutsideTracker", description: "Kensei will wait for you outside of the bandit prison.", ignoreLearnNotification: false);
-
             MartialArtistSkillTree.SetupSkillTree(ref martialArtistTreeInstance);
+            KenseiOutsideTracker.Init();
         }
     }
 }
