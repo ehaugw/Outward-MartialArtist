@@ -37,23 +37,32 @@ namespace MartialArtist
         }
     }
 
-    [HarmonyPatch(typeof(Item), nameof(Item.SetDurabilityRatio) )]
+    [HarmonyPatch(typeof(Item), nameof(Item.SetDurabilityRatio))]
     public class Item_SetDurabilityRatio
     {
         [HarmonyPrefix]
         public static void HarmonyPrefix(Item __instance, float _maxDurabilityRatio, float ___m_currentDurability)
         {
-            Debug.Log("hooked");
-
-            if (_maxDurabilityRatio > __instance.MaxDurability / ___m_currentDurability)
+            if (_maxDurabilityRatio > ___m_currentDurability / __instance.MaxDurability)
             {
-                Debug.Log("repairing");
                 if (SkillRequirements.SafeHasSkillKnowledge(__instance.OwnerCharacter, IDs.carefulMaintenanceID) && __instance is Weapon weapon)
                 {
-                    Debug.Log("has skill");
-                    TinyHelper.TinyHelperRPCManager.Instance.photonView.RPC("ApplyAddImbueEffectRPC", PhotonTargets.All, new object[] { weapon.UID, IDs.honedBladeImbueID, (float) CarefulMaintenanceSkill.DURATION});
+                    TinyHelper.TinyHelperRPCManager.Instance.photonView.RPC("ApplyAddImbueEffectRPC", PhotonTargets.All, new object[] { weapon.UID, IDs.honedBladeImbueID, (float)CarefulMaintenanceSkill.DURATION });
                 }
 
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Item), nameof(Item.ReduceDurability))]
+    public class Item_ReduceDurability
+    {
+        [HarmonyPrefix]
+        public static void HarmonyPrefix(Item __instance)
+        {
+            if (__instance is Weapon weapon && weapon.HasImbuePreset(IDs.honedBladeImbueID))
+            {
+                weapon.FirstImbue.RemainingLifespan -= 20;
             }
         }
     }
