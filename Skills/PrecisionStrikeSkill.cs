@@ -47,7 +47,8 @@ namespace MartialArtist
             var hitFromBack = Vector3.Dot(__instance.transform.forward, -_hitDir) < 0f && _angle >= 120f;
             if (_damageSource is Weapon _weapon && eligibleTypes.Contains(_weapon.Type) && SkillRequirements.SafeHasSkillKnowledge(_weapon?.OwnerCharacter, IDs.precisionStrikeID) && (hitFromBack || __instance.CharHurtType == Character.HurtType.Knockdown))
             {
-                var attackType = ((int)SideLoader.At.GetField<Character>(_weapon.OwnerCharacter, "m_attackID"));
+                //var attackType = ((int)SideLoader.At.GetField<Character>(_weapon.OwnerCharacter, "m_attackID"));
+                var attackType = _weapon.LastAttackID;
                 if (attackType == 0 || attackType == 1)
                 {
                     _damage.IgnoreHalfResistances = true;
