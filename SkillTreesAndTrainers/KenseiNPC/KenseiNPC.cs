@@ -9,10 +9,11 @@ namespace MartialArtist
 
     public class KenseiNPC : SynchronizedNPC
     {
+        public const string Name = "Kensei";
         public static void Init()
         {
             var syncedNPC = new KenseiNPC(
-                identifierName:     "Kensei",
+                identifierName:     Name,
                 rpcListenerID:      IDs.NPCID_Kensei,
                 defaultEquipment:   new int[] { IDs.tatteredHood1, IDs.tatteredAttireID, IDs.shadowKaziteLightBootsID, IDs.kaziteBladeID }
             );
@@ -36,8 +37,8 @@ namespace MartialArtist
 
         public static bool ShouldSpawnOutside()
         {
-            //return false;
-            return QuestRequirements.HasQuestKnowledge(CharacterManager.Instance.GetWorldHostCharacter(), new int[] { IDs.kenseiOutsideTrackerID }, LogicType.All);
+            return false;
+            //return QuestRequirements.HasQuestKnowledge(CharacterManager.Instance.GetWorldHostCharacter(), new int[] { IDs.kenseiOutsideTrackerID }, LogicType.All, true);
             //return CharacterManager.Instance.GetWorldHostCharacter().Inventory.SkillKnowledge.IsItemLearned(IDs.kenseiOutsideTrackerID);
         }
 
@@ -60,8 +61,9 @@ namespace MartialArtist
             switch (rpcMeta)
             {
                 case "prison":
-                    var npcIntro = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I am Kensei. I was captured by bandits. Thank you for saving me!");
-                    var giveMoveTracker = TinyDialogueManager.MakeStartQuest(graph, IDs.kenseiOutsideTrackerID);
+                    var npcIntro = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I am " + Name + ". I was captured by bandits. Thank you for saving me!");
+                    //var giveMoveTracker = TinyDialogueManager.MakeStartQuest(graph, IDs.kenseiOutsideTrackerID);
+                    var giveMoveTracker = TinyDialogueManager.MakeQuestEvent(graph, KenseiOutsideTracker.SecondQuestEventUID);
                     var wantToLeavePrisonStatement = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I would like to leave this prison as soon as the bandits outside are gone.");
                     var goesToEmercar = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I trust you in this. See you there!");
                     var openTrainer = TinyDialogueManager.MakeTrainDialogueAction(graph, trainerComp);
@@ -96,6 +98,10 @@ namespace MartialArtist
 
                     break;
                 case "emercar":
+                    //CompleteQuest
+                    //GiveReward
+                    //SendQuestEvent
+                    //QuestEventManager.Instance.SetQuestEventStack
                     var npcIntro2 = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "Hello! What are you up to?");
                     var enjoysEmercar = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "Thank you for checking on me. I love this place!");
                     var openTrainer2 = TinyDialogueManager.MakeTrainDialogueAction(graph, trainerComp);

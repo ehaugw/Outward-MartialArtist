@@ -30,6 +30,7 @@
             Instance = this;
 
             KenseiNPC.Init();
+            KenseiOutsideTracker.Init();
 
             CustomWeaponBehaviour.CustomWeaponBehaviour.Instance.parryBehaviour = new ParryBehaviourSkillRequired();
             CustomWeaponBehaviour.CustomWeaponBehaviour.Instance.bastardBehaviour = new BastardBehaviour();
@@ -68,8 +69,7 @@
             ForagerSkill.Init();
 
             MartialArtistSkillTree.SetupSkillTree(ref martialArtistTreeInstance);
-            KenseiOutsideTracker.Init();
-
+            
             foreach (var tup in new Tuple<int, string[]>[] {
                 new Tuple<int, string[]>(IDs.gaberryID, new string[]{IDs.ForagerTag}),
                 new Tuple<int, string[]>(IDs.krimpNutID, new string[]{IDs.ForagerTag}),
