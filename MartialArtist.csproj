@@ -48,6 +48,7 @@
     <Compile Include="MartialArtist.cs" />
     <Compile Include="QuestTrackers\KenseiOutsideTracker.cs" />
     <Compile Include="Skills\BastardSkill.cs" />
+    <Compile Include="Skills\ForagerSkill.cs" />
     <Compile Include="Skills\CarefulMaintenanceSkill.cs" />
     <Compile Include="Skills\FinesseSkill.cs" />
     <Compile Include="Skills\BlockSkill.cs" />

@@ -21,9 +21,9 @@ namespace MartialArtist
                 Name = NAME,
                 EffectBehaviour = EditBehaviours.Destroy,
                 Target_ItemID = IDs.arbitraryPassiveSkillID,
-                New_ItemID = IDs.carefulMaintenanceID,
+                New_ItemID = IDs.carefulMaintenanceSkillID,
                 SLPackName = MartialArtist.ModFolderName,
-                SubfolderName = "Footwork",
+                SubfolderName = "CarefulMaintenance",
                 Description = "Applies Honed Edge to sharp weapons when you repair them.",
                 IsUsable = false,
                 CastType = Character.SpellCastType.NONE,
@@ -45,7 +45,7 @@ namespace MartialArtist
         {
             if (_maxDurabilityRatio > ___m_currentDurability / __instance.MaxDurability)
             {
-                if (SkillRequirements.SafeHasSkillKnowledge(__instance.OwnerCharacter, IDs.carefulMaintenanceID) && __instance is Weapon weapon)
+                if (SkillRequirements.SafeHasSkillKnowledge(__instance.OwnerCharacter, IDs.carefulMaintenanceSkillID) && __instance is Weapon weapon)
                 {
                     TinyHelper.TinyHelperRPCManager.Instance.photonView.RPC("ApplyAddImbueEffectRPC", PhotonTargets.All, new object[] { weapon.UID, IDs.honedBladeImbueID, (float)CarefulMaintenanceSkill.DURATION });
                 }

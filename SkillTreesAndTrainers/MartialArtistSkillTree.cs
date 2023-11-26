@@ -33,14 +33,6 @@ namespace MartialArtist
                     } },
 
                     new SL_SkillRow() { RowIndex = 2, Slots = new List<SL_BaseSkillSlot>() {
-                        
-                    } },
-
-                    new SL_SkillRow() { RowIndex = 3, Slots = new List<SL_BaseSkillSlot>() {
-                        new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 500, SkillID = IDs.carefulMaintenanceID,      Breakthrough = true,   RequiredSkillSlot = Vector2.zero, },
-                    } },
-
-                    new SL_SkillRow() { RowIndex = 4, Slots = new List<SL_BaseSkillSlot>() {
                         new SL_SkillSlotFork()
                         {
                             ColumnIndex = 2,
@@ -48,7 +40,7 @@ namespace MartialArtist
                             Choice1 = new SL_SkillSlot()
                             {
                                 ColumnIndex = 2,
-                                SilverCost = 600,
+                                SilverCost = 100,
                                 SkillID = IDs.finesseSkillID,
                                 RequiredSkillSlot = new Vector2(3,2),
                                 Breakthrough = false
@@ -56,17 +48,25 @@ namespace MartialArtist
                             Choice2 = new SL_SkillSlot()
                             {
                                 ColumnIndex = 2,
-                                SilverCost = 600,
+                                SilverCost = 100,
                                 SkillID = IDs.bastardSkillID,
                                 RequiredSkillSlot = new Vector2(3,2),
                                 Breakthrough = false
                             }
                         },
-                        new SL_SkillSlot() { ColumnIndex = 1, SilverCost = 600, SkillID = IDs.throwSandID, Breakthrough = false,   RequiredSkillSlot = new Vector2(3,2) },
+                    } },
+
+                    new SL_SkillRow() { RowIndex = 3, Slots = new List<SL_BaseSkillSlot>() {
+                        new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 500, SkillID = IDs.foragerSkillID,               Breakthrough = true,    RequiredSkillSlot = Vector2.zero },
+                    } },
+
+                    new SL_SkillRow() { RowIndex = 4, Slots = new List<SL_BaseSkillSlot>() {
+                        new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.throwSandSkillID,             Breakthrough = false,   RequiredSkillSlot = new Vector2(3,2) },
                     } },
 
                     new SL_SkillRow() { RowIndex = 5, Slots = new List<SL_BaseSkillSlot>() {
-                            new SL_SkillSlot() { ColumnIndex = 1, SilverCost = 600, SkillID = IDs.precisionStrikeID, Breakthrough = false,   RequiredSkillSlot = new Vector2(3,2) },
+                        new SL_SkillSlot() { ColumnIndex = 1, SilverCost = 600, SkillID = IDs.precisionStrikeSkillID,       Breakthrough = false,   RequiredSkillSlot = new Vector2(3,2) },
+                        new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 600, SkillID = IDs.carefulMaintenanceSkillID,    Breakthrough = false,   RequiredSkillSlot = new Vector2(3,2) },
                     } },
                 }
             };

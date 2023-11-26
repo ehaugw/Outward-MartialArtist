@@ -15,13 +15,13 @@ namespace MartialArtist
             {
                 Name = "Hone Blade",
                 EffectBehaviour = EditBehaviours.Override,
-                Target_ItemID = IDs.infuseLightID, //Infuse Light
-                New_ItemID = IDs.honeBladeID,
-                Description = "Hone weapon",
+                Target_ItemID = IDs.infuseLightID,
+                New_ItemID = IDs.honeBladeSkillID,
+                SLPackName = MartialArtist.ModFolderName,
+                SubfolderName = "HoneBlade",
+                Description = "Hone your blade, making it sharper.",
                 IsUsable = true,
-                CastType = 
-                    //Character.SpellCastType.SpellBindLight,
-                    Character.SpellCastType.Bubble,
+                CastType = Character.SpellCastType.SpellBindLight,
                 CastModifier = Character.SpellCastModifier.Immobilized,
                 CastLocomotionEnabled = false,
                 MobileCastMovementMult = -1f,
@@ -44,11 +44,6 @@ namespace MartialArtist
                                 ImbueEffect_Preset_ID = IDs.honedBladeImbueID,
                                 Imbue_Slot = Weapon.WeaponSlot.MainHand
                             },
-                            //new SL_AddStatusEffect()
-                            //{
-                            //    StatusEffect = "Last Stand",
-                            //    ChanceToContract = 100
-                            //}
                         }
                     },
                 },

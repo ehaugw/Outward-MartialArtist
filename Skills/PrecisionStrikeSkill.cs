@@ -21,9 +21,9 @@ namespace MartialArtist
                 Name = NAME,
                 EffectBehaviour = EditBehaviours.Destroy,
                 Target_ItemID = IDs.arbitraryPassiveSkillID,
-                New_ItemID = IDs.precisionStrikeID,
+                New_ItemID = IDs.precisionStrikeSkillID,
                 SLPackName = MartialArtist.ModFolderName,
-                SubfolderName = "Parry",
+                SubfolderName = "PrecisionStrike",
                 Description = "Weapon attacks ignores half of the targets resistances when the target is prone or hit from behind.",
                 IsUsable = false,
                 CastType = Character.SpellCastType.NONE,
@@ -45,7 +45,7 @@ namespace MartialArtist
             var eligibleTypes = new Weapon.WeaponType[] { Weapon.WeaponType.Axe_1H, Weapon.WeaponType.Axe_2H, Weapon.WeaponType.Spear_2H, Weapon.WeaponType.Sword_1H, Weapon.WeaponType.Sword_2H };
 
             var hitFromBack = Vector3.Dot(__instance.transform.forward, -_hitDir) < 0f && _angle >= 120f;
-            if (_damageSource is Weapon _weapon && eligibleTypes.Contains(_weapon.Type) && SkillRequirements.SafeHasSkillKnowledge(_weapon?.OwnerCharacter, IDs.precisionStrikeID) && (hitFromBack || __instance.CharHurtType == Character.HurtType.Knockdown))
+            if (_damageSource is Weapon _weapon && eligibleTypes.Contains(_weapon.Type) && SkillRequirements.SafeHasSkillKnowledge(_weapon?.OwnerCharacter, IDs.precisionStrikeSkillID) && (hitFromBack || __instance.CharHurtType == Character.HurtType.Knockdown))
             {
                 //var attackType = ((int)SideLoader.At.GetField<Character>(_weapon.OwnerCharacter, "m_attackID"));
                 var attackType = _weapon.LastAttackID;
