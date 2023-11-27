@@ -144,14 +144,14 @@ namespace MartialArtist
                 found_in_cell = 1;
                 found_in_emercar = 1;
             }
+            
+            progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(LogSignature_A), found_in_cell >= 1);
 
-            progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(LogSignature_A), found_in_cell > 1);
-
-            if (found_in_cell > 1)
+            if (found_in_cell >= 1)
             {
-                progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(LogSignature_B), found_in_emercar > 1);
+                progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(LogSignature_B), found_in_emercar >= 1);
             }
-            if (found_in_emercar > 1)
+            if (found_in_emercar >= 1)
             {
                 progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(LogSignature_C), false);
             }

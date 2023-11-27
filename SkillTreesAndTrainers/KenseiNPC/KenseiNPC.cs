@@ -37,9 +37,9 @@ namespace MartialArtist
 
         public static bool ShouldSpawnOutside()
         {
-            return false;
-            //return QuestRequirements.HasQuestKnowledge(CharacterManager.Instance.GetWorldHostCharacter(), new int[] { IDs.kenseiOutsideTrackerID }, LogicType.All, true);
-            //return CharacterManager.Instance.GetWorldHostCharacter().Inventory.SkillKnowledge.IsItemLearned(IDs.kenseiOutsideTrackerID);
+            return
+                QuestRequirements.HasQuestKnowledge(CharacterManager.Instance.GetWorldHostCharacter(), new int[] { IDs.kenseiOutsideTrackerID }, LogicType.All, requireCompleted: true) ||
+                QuestRequirements.HasQuestEvent(KenseiOutsideTracker.SecondQuestEventUID);
         }
 
         public KenseiNPC(string identifierName, int rpcListenerID, int[] defaultEquipment = null, int[] moddedEquipment = null, Vector3? scale = null, Character.Factions? faction = null) :
@@ -62,7 +62,6 @@ namespace MartialArtist
             {
                 case "prison":
                     var npcIntro = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I am " + Name + ". I was captured by bandits. Thank you for saving me!");
-                    //var giveMoveTracker = TinyDialogueManager.MakeStartQuest(graph, IDs.kenseiOutsideTrackerID);
                     var giveMoveTracker = TinyDialogueManager.MakeQuestEvent(graph, KenseiOutsideTracker.SecondQuestEventUID);
                     var wantToLeavePrisonStatement = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I would like to leave this prison as soon as the bandits outside are gone.");
                     var goesToEmercar = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I trust you in this. See you there!");
