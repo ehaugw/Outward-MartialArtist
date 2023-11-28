@@ -37,7 +37,8 @@ Manual Uninstallation
 # Features
 
 "Martial Artist" implements a set of 8 clear and easy to understand passive skills that elevates Outward melee combat to a new level. [Bastard](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Bastard") and [Finesse](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Finesse") only works with weapons tagged with Bastard and Finesse respectingly. No such tags are added by this mod. To apply these tags to a hand picked selection of weapons, please check out [Custom Moveset Pack](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Custom Moveset Pack"), which can be installed without this mod to enable the features without requiring a learnt skills.
-**Throw Salt** (Passive)
+
+**Throw Salt** (Cooldown: 15 seconds, Stamina cost: 7)
 
 * Required: Salt
 * Causes Rage and Confusion.
@@ -76,6 +77,9 @@ Manual Uninstallation
 # Patch notes
 
 
+* Version 2.1.1
+
+  * Added stamina cost to **Throw Sand** and increased its impact damage from 30 to 50.
 * Version 2.1.0
 
   * The trainer can be told to move to Emercar for convenience
