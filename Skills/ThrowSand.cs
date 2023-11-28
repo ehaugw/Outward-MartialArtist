@@ -15,7 +15,7 @@ namespace MartialArtist
         {
             var myitem = new SL_AttackSkill()
             {
-                Name = "Throw Sand",
+                Name = "Throw Salt",
                 EffectBehaviour = EditBehaviours.Destroy,
                 Target_ItemID = IDs.sparkID,
                 New_ItemID = IDs.throwSandSkillID,

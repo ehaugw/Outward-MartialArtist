@@ -11,6 +11,15 @@ using UnityEngine;
 
 namespace MartialArtist
 {
+    public class TinyQuest
+    {
+        public string QuestName;
+        public int QuestId;
+        public string ScenarioUID;
+        public string QuestEventFamilyName;
+
+
+    }
     public static class KenseiOutsideTracker
     {
         const string QuestName = "Saving " + KenseiNPC.Name;

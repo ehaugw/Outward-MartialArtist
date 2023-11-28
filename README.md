@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at November 15, 2023. Due to significant changes in a few mod frameworks' infrastructures, it is recommended that you update all mods that are older than November 08, 2022.
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at November 28, 2023. Due to significant changes in a few mod frameworks' infrastructures, it is recommended that you update all mods that are older than November 08, 2022.
 
 
 
@@ -36,7 +36,24 @@ Manual Uninstallation
 
 # Features
 
-"Martial Artist" implements a set of four skills that adds interesting depth to melee combat in Outward. [Bastard](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Bastard") and [Finesse](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Finesse") only works with weapons tagged with Bastard and Finesse respectingly. No such tags are added by this mod. To apply these tags to a hand picked selection of weapons, please check out [Custom Moveset Pack](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Custom Moveset Pack"), which can be installed without this mod to enable the features without requiring a learnt skills.
+"Martial Artist" implements a set of 8 clear and easy to understand passive skills that elevates Outward melee combat to a new level. [Bastard](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Bastard") and [Finesse](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Finesse") only works with weapons tagged with Bastard and Finesse respectingly. No such tags are added by this mod. To apply these tags to a hand picked selection of weapons, please check out [Custom Moveset Pack](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Custom Moveset Pack"), which can be installed without this mod to enable the features without requiring a learnt skills.
+**Throw Salt** (Passive)
+
+* Required: Salt
+* Causes Rage and Confusion.
+
+**Precision Strike** (Passive)
+
+* Weapon attacks ignores half of the targets resistances when the target is prone or hit from behind.
+
+**Forager** (Passive)
+
+* Eating fresh fruits and berries restores some burnt stamina and health.
+
+**Careful Maintenance** (Passive)
+
+* Applies Honed Edge to sharp weapons when you repair them.
+
 **Bastard** (Passive)
 
 * Enables you to swing some one handed weapons in two hands.
@@ -45,7 +62,7 @@ Manual Uninstallation
 
 * Enables you to outpace your opponents with agile weapons.
 
-**Block** (Passive)
+**Reflexes** (Passive)
 
 * You can block with swords and spears, and use skills sooner after attacking.
 
@@ -59,6 +76,11 @@ Manual Uninstallation
 # Patch notes
 
 
+* Version 2.1.0
+
+  * The trainer can be told to move to Emercar for convenience
+  * Turned into a fully fleshed skill tree
+  * Works with the new Custom Weapon Behaviour refactoring as of 2023-11-28
 * Version 2.0.3
 
   * Fix **Parry** description.
