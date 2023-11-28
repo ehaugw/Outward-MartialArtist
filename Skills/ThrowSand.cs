@@ -38,7 +38,7 @@ namespace MartialArtist
                     }
                 },
                 Cooldown = 15,
-                StaminaCost = 0,
+                StaminaCost = 7,
                 HealthCost = 0,
                 ManaCost = 0,
             };
@@ -97,7 +97,7 @@ namespace MartialArtist
                             },
                             new SL_PunctualDamage()
                             {
-                                Knockback = 30,
+                                Knockback = 50,
                             }
                         }
                     }
