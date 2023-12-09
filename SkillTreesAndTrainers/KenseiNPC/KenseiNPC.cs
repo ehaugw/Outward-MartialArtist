@@ -57,6 +57,7 @@ namespace MartialArtist
             var trainerComp = TinyDialogueManager.SetTrainerSkillTree(trainerTemplate, MartialArtist.Instance.martialArtistTreeInstance.UID);
             var graph = TinyDialogueManager.GetDialogueGraph(trainerTemplate);
             TinyDialogueManager.SetActorReference(graph, actor);
+            graph.allNodes.Clear();
             
             switch (rpcMeta)
             {
@@ -77,7 +78,6 @@ namespace MartialArtist
                         "Why don't you go to the docks in Emercar?"
                     });
 
-                    graph.allNodes.Clear();
                     graph.allNodes.Add(npcIntro);
                     graph.allNodes.Add(introMultipleChoice);
                     graph.allNodes.Add(wantToLeavePrisonStatement);
@@ -114,7 +114,6 @@ namespace MartialArtist
                         "Can you teach me something useful?"
                     });
 
-                    graph.allNodes.Clear();
                     graph.allNodes.Add(npcIntro2);
                     graph.allNodes.Add(introMultipleChoice1);
                     graph.allNodes.Add(introMultipleChoice2);

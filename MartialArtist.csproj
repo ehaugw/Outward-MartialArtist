@@ -82,6 +82,10 @@
       <Name>TinyHelper</Name>
       <Private>False</Private>
     </ProjectReference>
+    <ProjectReference Include="..\TinyQuests\TinyQuests.csproj">
+      <Project>{91feddf0-6b78-4518-ad8f-587bc4d9406d}</Project>
+      <Name>TinyQuests</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
