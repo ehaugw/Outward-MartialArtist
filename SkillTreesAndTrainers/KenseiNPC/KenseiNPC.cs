@@ -39,7 +39,7 @@ namespace MartialArtist
         {
             return
                 QuestRequirements.HasQuestKnowledge(CharacterManager.Instance.GetWorldHostCharacter(), new int[] { IDs.kenseiOutsideTrackerID }, LogicType.All, requireCompleted: true) ||
-                QuestRequirements.HasQuestEvent(KenseiOutsideTracker.SecondQuestEventUID);
+                QuestRequirements.HasQuestEvent(KenseiOutsideTracker.QE_MoveToEmercar.EventUID);
         }
 
         public KenseiNPC(string identifierName, int rpcListenerID, int[] defaultEquipment = null, int[] moddedEquipment = null, Vector3? scale = null, Character.Factions? faction = null) :
@@ -62,7 +62,7 @@ namespace MartialArtist
             {
                 case "prison":
                     var npcIntro = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I am " + Name + ". I was captured by bandits. Thank you for saving me!");
-                    var giveMoveTracker = TinyDialogueManager.MakeQuestEvent(graph, KenseiOutsideTracker.SecondQuestEventUID);
+                    var giveMoveTracker = TinyDialogueManager.MakeQuestEvent(graph, KenseiOutsideTracker.QE_MoveToEmercar.EventUID);
                     var wantToLeavePrisonStatement = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I would like to leave this prison as soon as the bandits outside are gone.");
                     var goesToEmercar = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I trust you in this. See you there!");
                     var openTrainer = TinyDialogueManager.MakeTrainDialogueAction(graph, trainerComp);
@@ -97,13 +97,17 @@ namespace MartialArtist
 
                     break;
                 case "emercar":
-                    //CompleteQuest
-                    //GiveReward
-                    //SendQuestEvent
-                    //QuestEventManager.Instance.SetQuestEventStack
                     var npcIntro2 = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "Hello! What are you up to?");
                     var enjoysEmercar = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "Thank you for checking on me. I love this place!");
+                    var giveReward = TinyDialogueManager.MakeGiveItemReward(graph, IDs.ironCoinID, GiveReward.Receiver.Host);
+                    var isComplete = TinyDialogueManager.MakeEventOccuredCondition(graph, KenseiOutsideTracker.QE_FoundInEmercar.EventUID, 1);
+                    var makeComplete = TinyDialogueManager.MakeQuestEvent(graph, KenseiOutsideTracker.QE_FoundInEmercar.EventUID);
                     var openTrainer2 = TinyDialogueManager.MakeTrainDialogueAction(graph, trainerComp);
+
+                    var introMultipleChoice1 = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] {
+                        "I wanted to see that you got here safely!",
+                        "Can you teach me something useful?"
+                    });
 
                     var introMultipleChoice2 = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] {
                         "I am just stopping by.",
@@ -112,16 +116,27 @@ namespace MartialArtist
 
                     graph.allNodes.Clear();
                     graph.allNodes.Add(npcIntro2);
+                    graph.allNodes.Add(introMultipleChoice1);
                     graph.allNodes.Add(introMultipleChoice2);
                     graph.allNodes.Add(enjoysEmercar);
                     graph.allNodes.Add(openTrainer2);
+                    graph.allNodes.Add(giveReward);
+                    graph.allNodes.Add(isComplete);
+                    graph.allNodes.Add(makeComplete);
 
                     graph.primeNode = npcIntro2;
-                    graph.ConnectNodes(npcIntro2, introMultipleChoice2);
+                    graph.ConnectNodes(npcIntro2, isComplete);
+                    graph.ConnectNodes(isComplete, introMultipleChoice2, 0);
+                    
                     graph.ConnectNodes(introMultipleChoice2, enjoysEmercar, 0);
-                    graph.ConnectNodes(enjoysEmercar, npcIntro2);
-
                     graph.ConnectNodes(introMultipleChoice2, openTrainer2, 1);
+
+                    graph.ConnectNodes(isComplete, introMultipleChoice1, 1);
+                    graph.ConnectNodes(introMultipleChoice1, giveReward, 0);
+                    graph.ConnectNodes(introMultipleChoice1, openTrainer2, 1);
+                    graph.ConnectNodes(giveReward, makeComplete);
+                    graph.ConnectNodes(makeComplete, enjoysEmercar);
+                    graph.ConnectNodes(enjoysEmercar, npcIntro2);
 
                     break;
                 default:
