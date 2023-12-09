@@ -43,7 +43,7 @@ namespace MartialArtist
         [HarmonyPrefix]
         public static void HarmonyPrefix(Item __instance, float _maxDurabilityRatio, float ___m_currentDurability)
         {
-            if (_maxDurabilityRatio > ___m_currentDurability / __instance.MaxDurability)
+            if (_maxDurabilityRatio >= ___m_currentDurability / __instance.MaxDurability)
             {
                 if (SkillRequirements.SafeHasSkillKnowledge(__instance.OwnerCharacter, IDs.carefulMaintenanceSkillID) && __instance is Weapon weapon)
                 {
