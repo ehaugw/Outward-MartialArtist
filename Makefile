@@ -3,7 +3,7 @@ gamepath = /mnt/c/Program\ Files\ \(x86\)/Steam/steamapps/common/Outward/Outward
 pluginpath = BepInEx/plugins
 sideloaderpath = $(pluginpath)/$(modname)/SideLoader
 
-dependencies = CustomWeaponBehaviour SynchronizedWorldObjects TinyHelper
+dependencies = CustomWeaponBehaviour SynchronizedWorldObjects TinyHelper IronCoin
 
 assemble:
 	# common for all mods
@@ -18,6 +18,9 @@ assemble:
 	mkdir -p public/$(sideloaderpath)/Items
 	mkdir -p public/$(sideloaderpath)/Texture2D
 	mkdir -p public/$(sideloaderpath)/AssetBundles
+	
+	mkdir -p public/$(sideloaderpath)/Items/IronCoin/Textures
+	cp -u resources/icons/IronCoin.png                         public/$(sideloaderpath)/Items/IronCoin/Textures/icon.png
 	
 	mkdir -p public/$(sideloaderpath)/Items/ThrowSand/Textures
 	cp -u resources/icons/bastard.png                          public/$(sideloaderpath)/Items/ThrowSand/Textures/icon.png
