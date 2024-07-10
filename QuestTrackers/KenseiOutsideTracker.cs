@@ -1,4 +1,4 @@
-﻿using InstanceIDs;
+using InstanceIDs;
 using SideLoader;
 using SideLoader.Managers;
 using System.Collections.Generic;
@@ -53,27 +53,34 @@ namespace MartialArtist
 
             Dictionary<string, string> QuestLogSignatures = new Dictionary<string, string>()
             {
-                { GetLogSignature("a"), "Free " + KenseiNPC.Name + " from the bandit camp." },
-                { GetLogSignature("b"), "Meet " + KenseiNPC.Name + " at the Docks in Emercar." },
-                { GetLogSignature("c"), "You saved " + KenseiNPC.Name + "." },
+                { GetLogSignature("find"),                  "Find " + KenseiNPC.Name + " in the bandit camp." },
+                { GetLogSignature("talked"),                "Provide " + KenseiNPC.Name + " with an Iron Sword." },
+                { GetLogSignature("freed"),                 "Meet " + KenseiNPC.Name + " at the Docks in Emercar." },
+                { GetLogSignature("rewarded"),              "You saved " + KenseiNPC.Name + "." },
             };
 
             TinyQuests.PrepareSLQuest(QuestTemplate, QuestLogSignatures, UpdateQuestProgress);
 
-            QuestEventManager.Instance.RegisterOnQEAddedListener(QE_MoveToEmercar.EventUID, new MoveToEmercarListener());
+            QuestEventManager.Instance.RegisterOnQEAddedListener(QE_MoveOrderToEmercar.EventUID, new MoveToEmercarListener());
             QuestEventManager.Instance.RegisterOnQEAddedListener(QE_FoundInEmercar.EventUID, new TalkInEmercarListener());
         }
 
         public static string GetLogSignature(string letter) => QE_Scenario_UID + ".log_signature." + letter;
-        
+
         public static QuestEventSignature QE_NotFound;
-        public static QuestEventSignature QE_MoveToEmercar;
+        public static QuestEventSignature QE_InitialTalk;
+        public static QuestEventSignature QE_GivenSword;
+        public static QuestEventSignature QE_GivenSwordEnchanted;
+        public static QuestEventSignature QE_MoveOrderToEmercar;
         public static QuestEventSignature QE_FoundInEmercar;
 
         public static void Init()
         {
             QE_NotFound = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".not_found", false, true, true, QUEST_EVENT_FAMILY_NAME);
-            QE_MoveToEmercar = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".move_to_emercar", false, true, true, QUEST_EVENT_FAMILY_NAME);
+            QE_InitialTalk = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".initial_talk", false, true, true, QUEST_EVENT_FAMILY_NAME);
+            QE_GivenSword = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".given_sword", false, true, true, QUEST_EVENT_FAMILY_NAME);
+            QE_GivenSwordEnchanted = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".given_sword_enchanted", false, true, true, QUEST_EVENT_FAMILY_NAME);
+            QE_MoveOrderToEmercar = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".move_order_to_emercar", false, true, true, QUEST_EVENT_FAMILY_NAME);
             QE_FoundInEmercar = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".found_in_emercar", false, true, true, QUEST_EVENT_FAMILY_NAME);
             
             SL.OnPacksLoaded += PrepareTinyQuest;
@@ -112,25 +119,27 @@ namespace MartialArtist
 
             QuestProgress progress = quest.GetComponent<QuestProgress>();
 
-            int found_in_cell = QuestEventManager.Instance.GetEventCurrentStack(QE_MoveToEmercar.EventUID);
-            int found_in_emercar = QuestEventManager.Instance.GetEventCurrentStack(QE_FoundInEmercar.EventUID);
-            
+            int talked = QuestEventManager.Instance.GetEventCurrentStack(QE_InitialTalk.EventUID);
+            int move = QuestEventManager.Instance.GetEventCurrentStack(QE_MoveOrderToEmercar.EventUID);
+            int found = QuestEventManager.Instance.GetEventCurrentStack(QE_FoundInEmercar.EventUID);
+
             if (quest.IsCompleted)
             {
-                found_in_cell = 1;
-                found_in_emercar = 1;
+                talked = 1;
+                move = 1;
+                found = 1;
             }
             
-            progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("a")), found_in_cell >= 1);
+            progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("find")), talked >= 1);
 
-            if (found_in_cell >= 1)
-            {
-                progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("b")), found_in_emercar >= 1);
-            }
-            if (found_in_emercar >= 1)
-            {
-                progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("c")), false);
-            }
+            if (talked >= 1)
+                progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("talked")), move >= 1);
+
+            if (move >= 1)
+                progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("freed")), found >= 1);
+
+            if (found >= 1)
+                progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("rewarded")), found >= 1);
         }
     }
 }
