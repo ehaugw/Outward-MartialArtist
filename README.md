@@ -60,6 +60,9 @@ Manual Uninstallation
 # Patch notes
 
 
+* Version 3.0.1
+
+  * Update mod icon
 * Version 3.0.0
 
   * Post breakthrough skills has been removed (and added to another skill tree in another mod)
