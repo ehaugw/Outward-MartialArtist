@@ -36,24 +36,7 @@ Manual Uninstallation
 
 # Features
 
-"Martial Artist" implements a set of 8 clear and easy to understand passive skills that elevates Outward melee combat to a new level. [Bastard](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Bastard") and [Finesse](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Finesse") only works with weapons tagged with Bastard and Finesse respectingly. No such tags are added by this mod. To apply these tags to a hand picked selection of weapons, please check out [Custom Moveset Pack](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Custom Moveset Pack"), which can be installed without this mod to enable the features without requiring a learnt skills.
-
-**Throw Salt** (Cooldown: 15 seconds, Stamina cost: 7)
-
-* Required: Salt
-* Causes Rage and Confusion.
-
-**Precision Strike** (Passive)
-
-* Weapon attacks ignores half of the targets resistances when the target is prone or hit from behind.
-
-**Forager** (Passive)
-
-* Eating fresh fruits and berries restores some burnt stamina and health.
-
-**Careful Maintenance** (Passive)
-
-* Applies Honed Edge to sharp weapons when you repair them.
+"Martial Artist" implements a set of 4 clear and easy to understand passive skills that elevates Outward melee combat to a new level. [Bastard](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Bastard") and [Finesse](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Finesse") only works with weapons tagged with Bastard and Finesse respectingly. No such tags are added by this mod. To apply these tags to a hand picked selection of weapons, please check out [Custom Moveset Pack](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Custom Moveset Pack"), which can be installed without this mod to enable the features without requiring a learnt skills.
 
 **Bastard** (Passive)
 
@@ -77,6 +60,9 @@ Manual Uninstallation
 # Patch notes
 
 
+* Version 3.0.0
+
+  * Post breakthrough skills has been removed (and added to another skill tree in another mod)
 * Version 2.1.3
 
   * Contains a new version of CustomWeaponBehaviour that doesn't break sprint attacks

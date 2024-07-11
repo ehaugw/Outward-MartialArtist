@@ -44,18 +44,11 @@
     <Compile Include="BehaviourClasses\AttackCancelByBlockBehaviour.cs" />
     <Compile Include="BehaviourClasses\FinesseBehaviour.cs" />
     <Compile Include="BehaviourClasses\ParryBehaviour.cs" />
-    <Compile Include="EffectInitializer.cs" />
     <Compile Include="MartialArtist.cs" />
-    <Compile Include="QuestTrackers\KenseiOutsideTracker.cs" />
     <Compile Include="Skills\BastardSkill.cs" />
-    <Compile Include="Skills\ForagerSkill.cs" />
-    <Compile Include="Skills\CarefulMaintenanceSkill.cs" />
     <Compile Include="Skills\FinesseSkill.cs" />
     <Compile Include="Skills\BlockSkill.cs" />
-    <Compile Include="Skills\ApplyHonedBlade.cs" />
-    <Compile Include="Skills\PrecisionStrikeSkill.cs" />
     <Compile Include="Skills\ParrySkill.cs" />
-    <Compile Include="Skills\ThrowSand.cs" />
     <Compile Include="SkillTreesAndTrainers\KenseiNPC\KenseiNPC.cs" />
     <Compile Include="SkillTreesAndTrainers\MartialArtistSkillTree.cs" />
   </ItemGroup>
@@ -81,10 +74,6 @@
       <Project>{5bff01dc-4eae-4eba-9b1e-fdf0cfe577f2}</Project>
       <Name>TinyHelper</Name>
       <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\TinyQuests\TinyQuests.csproj">
-      <Project>{91feddf0-6b78-4518-ad8f-587bc4d9406d}</Project>
-      <Name>TinyQuests</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

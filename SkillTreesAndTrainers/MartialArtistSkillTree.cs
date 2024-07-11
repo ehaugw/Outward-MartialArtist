@@ -57,16 +57,12 @@ namespace MartialArtist
                     } },
 
                     new SL_SkillRow() { RowIndex = 3, Slots = new List<SL_BaseSkillSlot>() {
-                        new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 500, SkillID = IDs.foragerSkillID,               Breakthrough = true,    RequiredSkillSlot = Vector2.zero },
                     } },
 
                     new SL_SkillRow() { RowIndex = 4, Slots = new List<SL_BaseSkillSlot>() {
-                        new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.throwSandSkillID,             Breakthrough = false,   RequiredSkillSlot = new Vector2(3,2) },
                     } },
 
                     new SL_SkillRow() { RowIndex = 5, Slots = new List<SL_BaseSkillSlot>() {
-                        new SL_SkillSlot() { ColumnIndex = 1, SilverCost = 600, SkillID = IDs.precisionStrikeSkillID,       Breakthrough = false,   RequiredSkillSlot = new Vector2(3,2) },
-                        new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 600, SkillID = IDs.carefulMaintenanceSkillID,    Breakthrough = false,   RequiredSkillSlot = new Vector2(3,2) },
                     } },
                 }
             };
