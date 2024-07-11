@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at November 29, 2023. Due to significant changes in a few mod frameworks' infrastructures, it is recommended that you update all mods that are older than November 08, 2022.
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 11, 2024. Due to significant changes in a few mod frameworks' infrastructures, it is recommended that you update all mods that are older than November 08, 2022.
 
 
 
@@ -77,6 +77,10 @@ Manual Uninstallation
 # Patch notes
 
 
+* Version 2.1.3
+
+  * Contains a new version of CustomWeaponBehaviour that doesn't break sprint attacks
+  * Implemented a quest related to the trainer and moving him to Emercar.
 * Version 2.1.2
 
   * Contains an updated version of Custom Weapon Behaviour that doesn't break bows and daggers
