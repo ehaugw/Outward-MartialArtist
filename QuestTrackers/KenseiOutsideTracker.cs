@@ -54,7 +54,8 @@ namespace MartialArtist
             Dictionary<string, string> QuestLogSignatures = new Dictionary<string, string>()
             {
                 { GetLogSignature("find"),                  "Find " + KenseiNPC.Name + " in the bandit camp." },
-                { GetLogSignature("talked"),                "Provide " + KenseiNPC.Name + " with an Iron Sword." },
+                { GetLogSignature("provide"),               "Provide " + KenseiNPC.Name + " with an Iron Sword." },
+                { GetLogSignature("send"),                  "Send " + KenseiNPC.Name + " to the Docks in Emercar." },
                 { GetLogSignature("freed"),                 "Meet " + KenseiNPC.Name + " at the Docks in Emercar." },
                 { GetLogSignature("rewarded"),              "You saved " + KenseiNPC.Name + "." },
             };
@@ -120,6 +121,7 @@ namespace MartialArtist
             QuestProgress progress = quest.GetComponent<QuestProgress>();
 
             int talked = QuestEventManager.Instance.GetEventCurrentStack(QE_InitialTalk.EventUID);
+            int provided = QuestEventManager.Instance.GetEventCurrentStack(QE_GivenSword.EventUID);
             int move = QuestEventManager.Instance.GetEventCurrentStack(QE_MoveOrderToEmercar.EventUID);
             int found = QuestEventManager.Instance.GetEventCurrentStack(QE_FoundInEmercar.EventUID);
 
@@ -128,12 +130,16 @@ namespace MartialArtist
                 talked = 1;
                 move = 1;
                 found = 1;
+                provided = 1;
             }
             
             progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("find")), talked >= 1);
 
             if (talked >= 1)
-                progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("talked")), move >= 1);
+                progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("provide")), provided >= 1);
+            
+            if (provided >= 1)
+                progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("send")), move >= 1);
 
             if (move >= 1)
                 progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("freed")), found >= 1);
