@@ -19,25 +19,6 @@ assemble:
 	mkdir -p public/$(sideloaderpath)/Texture2D
 	mkdir -p public/$(sideloaderpath)/AssetBundles
 	
-	mkdir -p public/$(sideloaderpath)/Items/IronCoin/Textures
-	cp -u resources/icons/IronCoin.png                         public/$(sideloaderpath)/Items/IronCoin/Textures/icon.png
-	
-	mkdir -p public/$(sideloaderpath)/Items/ThrowSand/Textures
-	cp -u resources/icons/bastard.png                          public/$(sideloaderpath)/Items/ThrowSand/Textures/icon.png
-	cp -u resources/icons/bastard_small.png                    public/$(sideloaderpath)/Items/ThrowSand/Textures/skillicon.png
-	mkdir -p public/$(sideloaderpath)/Items/PrecisionStrike/Textures
-	cp -u resources/icons/precision_strike.png                 public/$(sideloaderpath)/Items/PrecisionStrike/Textures/icon.png
-	cp -u resources/icons/precision_strike_small.png           public/$(sideloaderpath)/Items/PrecisionStrike/Textures/skillicon.png
-	mkdir -p public/$(sideloaderpath)/Items/Forager/Textures
-	cp -u resources/icons/forager.png                          public/$(sideloaderpath)/Items/Forager/Textures/icon.png
-	cp -u resources/icons/forager_small.png                    public/$(sideloaderpath)/Items/Forager/Textures/skillicon.png
-	mkdir -p public/$(sideloaderpath)/Items/CarefulMaintenance/Textures
-	cp -u resources/icons/bastard.png                          public/$(sideloaderpath)/Items/CarefulMaintenance/Textures/icon.png
-	cp -u resources/icons/bastard_small.png                    public/$(sideloaderpath)/Items/CarefulMaintenance/Textures/skillicon.png
-	# mkdir -p public/$(sideloaderpath)/Items/HoneBlade/Textures
-	# cp -u resources/icons/bastard.png                          public/$(sideloaderpath)/Items/HoneBlade/Textures/icon.png
-	# cp -u resources/icons/bastard_small.png                    public/$(sideloaderpath)/Items/HoneBlade/Textures/skillicon.png
-	
 	mkdir -p public/$(sideloaderpath)/Items/Bastard/Textures
 	cp -u resources/icons/bastard.png                          public/$(sideloaderpath)/Items/Bastard/Textures/icon.png
 	cp -u resources/icons/bastard_small.png                    public/$(sideloaderpath)/Items/Bastard/Textures/skillicon.png

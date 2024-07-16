@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 11, 2024. Due to significant changes in a few mod frameworks' infrastructures, it is recommended that you update all mods that are older than November 08, 2022.
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 16, 2024. 
 
 
 
@@ -10,26 +10,6 @@ This mods was confirmed to work with the (at that time) current base game (Outwa
 What's the purpose of "Martial Artist"?
 
 * Provide some simple mechanics, locked behind basic skills, to add some depth to combat
-
-Manual Installation
-
-* Ensure that you are opted in to the **default-mono** branch.
-* Ensure that [BepInEx](https://outward.thunderstore.io/package/BepInEx/BepInExPack_Outward/ "BepInEx") is installed.
-* Make sure all **dependencies** are installed. The mod **depends** on these and will not work without them!
-
-  * **[Outward SideLoader](https://outward.thunderstore.io/package/sinai-dev/SideLoader/ "Outward SideLoader")**
-  * **[BepInEx](https://outward.thunderstore.io/package/BepInEx/BepInExPack_Outward/ "BepInEx")**
-* Uninstall previous versions of the mod.
-* Download "MartialArtist.zip".
-* Move "MartialArtist.zip" into the "Outward" game folder.
-* Right click "MartialArtist.zip" and click "Extract Here".
-
-Manual Uninstallation
-
-* Version 1.0.0 and onwards
-
-  * Navigate to "Outward/BepInEx/plugins/".
-  * Delete the "MartialArtist" folder.
 
 
 
@@ -60,6 +40,9 @@ Manual Uninstallation
 # Patch notes
 
 
+* Version 3.0.2
+
+  * Remove unused icons
 * Version 3.0.1
 
   * Update mod icon
@@ -102,7 +85,7 @@ Manual Uninstallation
 
 
 
-# Other mods by [ehaugw](https://www.nexusmods.com/users/51266516 "ehaugw") (this list may be outdated)
+# Other mods by [ehaugw](https://thunderstore.io/c/outward/p/ehaugw/ "ehaugw") (this list may be outdated)
 
 
 * [Anti Alchemy Abuse](https://outward.thunderstore.io/package/ehaugw/AntiAlchemyAbuse/ "Anti Alchemy Abuse")
@@ -144,6 +127,9 @@ Manual Uninstallation
 * [Martial Artist](https://outward.thunderstore.io/package/ehaugw/MartialArtist/ "Martial Artist")
 
   * Provide some simple mechanics, locked behind basic skills, to add some depth to combat
+* [Vagabond](https://outward.thunderstore.io/package/ehaugw/Vagabond/ "Vagabond")
+
+  * Provide positional mechanics, beast taming, dirty tricks and an enhanced survival experience.
 
 
 
@@ -151,3 +137,23 @@ Manual Uninstallation
 # Credits
 
 Thanks to **Sinai** for making the [Outward Explorer](https://github.com/sinaioutlander/Outward-Mods/tree/master/Explorer "Outward Explorer"), and always beeing up for discussing solutions to anything.
+Manual Installation
+
+* Ensure that you are opted in to the **default-mono** branch.
+* Ensure that [BepInEx](https://outward.thunderstore.io/package/BepInEx/BepInExPack_Outward/ "BepInEx") is installed.
+* Make sure all **dependencies** are installed. The mod **depends** on these and will not work without them!
+
+  * **[Outward SideLoader](https://outward.thunderstore.io/package/sinai-dev/SideLoader/ "Outward SideLoader")**
+  * **[BepInEx](https://outward.thunderstore.io/package/BepInEx/BepInExPack_Outward/ "BepInEx")**
+* Uninstall previous versions of the mod.
+* Download "MartialArtist.zip".
+* Move "MartialArtist.zip" into the "Outward" game folder.
+* Right click "MartialArtist.zip" and click "Extract Here".
+
+Manual Uninstallation
+
+* Version 1.0.0 and onwards
+
+  * Navigate to "Outward/BepInEx/plugins/".
+  * Delete the "MartialArtist" folder.
+
