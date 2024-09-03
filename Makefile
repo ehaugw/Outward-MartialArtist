@@ -3,7 +3,7 @@ gamepath = /mnt/c/Program\ Files\ \(x86\)/Steam/steamapps/common/Outward/Outward
 pluginpath = BepInEx/plugins
 sideloaderpath = $(pluginpath)/$(modname)/SideLoader
 
-dependencies = CustomWeaponBehaviour SynchronizedWorldObjects TinyHelper
+dependencies = CustomWeaponBehaviour SynchronizedWorldObjects TinyHelper HolyDamageManager
 
 assemble:
 	# common for all mods

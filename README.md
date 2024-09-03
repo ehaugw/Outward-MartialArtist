@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 16, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at September 03, 2024. 
 
 
 
@@ -40,6 +40,10 @@ What's the purpose of "Martial Artist"?
 # Patch notes
 
 
+* Version 3.0.3
+
+  * Fix bug in Custom Weapon Behaviour
+  * Include Holy Damage Manager to make this mod work as a standalone mod
 * Version 3.0.2
 
   * Remove unused icons
@@ -130,6 +134,12 @@ What's the purpose of "Martial Artist"?
 * [Vagabond](https://outward.thunderstore.io/package/ehaugw/Vagabond/ "Vagabond")
 
   * Provide positional mechanics, beast taming, dirty tricks and an enhanced survival experience.
+* [Weapon Repair Kit](https://thunderstore.io/c/outward/p/ehaugw/WeaponRepairKit "Weapon Repair Kit")
+
+  * Repair your weapons on the fly!
+* [Rune of Protection](https://thunderstore.io/c/outward/p/ehaugw/RuneOfProtection "Rune of Protection")
+
+  * Enable manaless characters to gain Runic Protection through a limited consumable
 
 
 
