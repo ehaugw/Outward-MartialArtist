@@ -9,9 +9,11 @@
     using System.IO;
     using HarmonyLib;
     using System;
+    using CustomWeaponBehaviour;
 
     [BepInPlugin(GUID, NAME, VERSION)]
     [BepInDependency(SL.GUID, BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency(CustomWeaponBehaviour.GUID, CustomWeaponBehaviour.VERSION)]
     [BepInDependency(SynchronizedWorldObjects.SynchronizedWorldObjects.GUID, SynchronizedWorldObjects.SynchronizedWorldObjects.VERSION)]
 
     public class MartialArtist : BaseUnityPlugin
@@ -30,11 +32,11 @@
 
             KenseiNPC.Init();
 
-            CustomWeaponBehaviour.CustomWeaponBehaviour.Instance.parryBehaviour = new ParryBehaviourSkillRequired();
-            CustomWeaponBehaviour.CustomWeaponBehaviour.Instance.bastardBehaviour = new BastardBehaviour();
-            CustomWeaponBehaviour.CustomWeaponBehaviour.Instance.finesseBehaviour = new FinesseBehaviour();
-            CustomWeaponBehaviour.CustomWeaponBehaviour.Instance.attackCancelByBlockBehaviour = new AttackCancelByBlockBehaviour();
-            CustomWeaponBehaviour.CustomWeaponBehaviour.Instance.attackCancelBySkillBehaviour = new AttackCancelBySkillBehaviour();
+            CustomWeaponBehaviour.Instance.parryBehaviour = new ParryBehaviourSkillRequired();
+            CustomWeaponBehaviour.Instance.bastardBehaviour = new BastardBehaviour();
+            CustomWeaponBehaviour.Instance.finesseBehaviour = new FinesseBehaviour();
+            CustomWeaponBehaviour.Instance.attackCancelByBlockBehaviour = new AttackCancelByBlockBehaviour();
+            CustomWeaponBehaviour.Instance.attackCancelBySkillBehaviour = new AttackCancelBySkillBehaviour();
 
             SL.OnPacksLoaded += OnPackLoaded;
             SL.OnSceneLoaded += OnSceneLoaded;
