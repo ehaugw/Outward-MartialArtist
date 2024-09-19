@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at September 03, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at September 19, 2024. 
 
 
 
@@ -40,6 +40,9 @@ What's the purpose of "Martial Artist"?
 # Patch notes
 
 
+* Version 3.0.4
+
+  * Tell BepInEx that CustomWeaponBehaviour is a hard dependency
 * Version 3.0.3
 
   * Fix bug in Custom Weapon Behaviour
