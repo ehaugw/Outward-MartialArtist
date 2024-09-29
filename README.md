@@ -40,6 +40,9 @@ What's the purpose of "Martial Artist"?
 # Patch notes
 
 
+* Version 3.1.1
+
+  * Include BaseDamageModifiers
 * Version 3.1.0
 
   * Create **Brawler** to toggle greatmace shove moveset across brawler weapons
