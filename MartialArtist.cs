@@ -35,6 +35,7 @@
             CustomWeaponBehaviour.Instance.parryBehaviour = new ParryBehaviourSkillRequired();
             CustomWeaponBehaviour.Instance.bastardBehaviour = new BastardBehaviour();
             CustomWeaponBehaviour.Instance.finesseBehaviour = new FinesseBehaviour();
+            CustomWeaponBehaviour.Instance.maulShoveBehaviour = new MaulShoveBehaviour();
             CustomWeaponBehaviour.Instance.attackCancelByBlockBehaviour = new AttackCancelByBlockBehaviour();
             CustomWeaponBehaviour.Instance.attackCancelBySkillBehaviour = new AttackCancelBySkillBehaviour();
 
@@ -58,6 +59,7 @@
             BastardSkill.Init();
             FinesseSkill.Init();
             BlockSkill.Init();
+            Brawler.Init();
             MartialArtistSkillTree.SetupSkillTree(ref martialArtistTreeInstance);
         }
     }

@@ -41,11 +41,13 @@
   <ItemGroup>
     <Compile Include="BehaviourClasses\AttackCancelBySkillBehaviour.cs" />
     <Compile Include="BehaviourClasses\BastardBehaviour.cs" />
+    <Compile Include="BehaviourClasses\MaulShoveBehaviour.cs" />
     <Compile Include="BehaviourClasses\AttackCancelByBlockBehaviour.cs" />
     <Compile Include="BehaviourClasses\FinesseBehaviour.cs" />
     <Compile Include="BehaviourClasses\ParryBehaviour.cs" />
     <Compile Include="MartialArtist.cs" />
     <Compile Include="Skills\BastardSkill.cs" />
+    <Compile Include="Skills\Brawler.cs" />
     <Compile Include="Skills\FinesseSkill.cs" />
     <Compile Include="Skills\BlockSkill.cs" />
     <Compile Include="Skills\ParrySkill.cs" />
