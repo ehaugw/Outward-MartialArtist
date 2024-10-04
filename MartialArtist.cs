@@ -19,7 +19,7 @@
     public class MartialArtist : BaseUnityPlugin
     {
         public const string GUID = "com.ehaugw.martialartist";
-        public const string VERSION = "3.1.1";
+        public const string VERSION = "3.1.2";
         public const string NAME = "Martial Artist";
         public static string ModFolderName = Directory.GetParent(typeof(MartialArtist).Assembly.Location).Name.ToString();
 

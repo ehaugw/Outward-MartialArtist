@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at September 29, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at October 04, 2024. 
 
 
 
@@ -40,12 +40,15 @@ What's the purpose of "Martial Artist"?
 # Patch notes
 
 
+* Version 3.1.2
+
+  * update makefile with recursive dependencies
 * Version 3.1.1
 
   * Include BaseDamageModifiers
 * Version 3.1.0
 
-  * Create **Brawler** to toggle greatmace shove moveset across brawler weapons
+  * Create [Brawler](https://outward.thunderstore.io/package/ehaugw/CustomMovesetPack/ "Brawler") to toggle greatmace shove moveset across brawler weapons
 * Version 3.0.4
 
   * Tell BepInEx that CustomWeaponBehaviour is a hard dependency
@@ -149,6 +152,9 @@ What's the purpose of "Martial Artist"?
 * [Rune of Protection](https://thunderstore.io/c/outward/p/ehaugw/RuneOfProtection "Rune of Protection")
 
   * Enable manaless characters to gain Runic Protection through a limited consumable
+* [Relic Keeper](https://outward.thunderstore.io/package/ehaugw/RelicKeeper/ "Relic Keeper")
+
+  * Gives the player an opportunity to collect relics of all rarities, and channel their unique powers.
 
 
 
